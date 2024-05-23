@@ -1,0 +1,16 @@
+/* HAy un archivo externo CSS */
+
+.swal2-modal {
+    background-color: #fff;
+    font-family: SolaimanLipiNormal;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    max-height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 2000;
+}

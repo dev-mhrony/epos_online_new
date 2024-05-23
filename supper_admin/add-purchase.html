@@ -1,0 +1,740 @@
+<!DOCTYPE php>
+<php lang="en">
+	<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Add Purchase || 2024 </title>
+	
+		<link href="../assets/css/styles.css" rel="stylesheet" />
+		<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+		<link rel='stylesheet' href='../assets/plugin/select2/dist/select2.min.css'>
+		<link href="../assets/plugin/select2/dist/style.css" rel="stylesheet" />
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/4.0.6/sweetalert2.min.css'>
+		<link rel="stylesheet" href="../assets/plugin/htmlsweetalert/dist/style.css">
+		<link href="../assets/css/theme.css?v=3.5" rel="stylesheet" />
+		<link href="../assets/css/typography_en.css" rel="stylesheet" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+
+
+
+   </head>
+   <body class="sb-nav-fixed">
+
+      
+
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-light ">
+    <a class="navbar-brand" href="deashbord"> <img src="uploads/logo2023-10-02-09-06-37_651a33bd45bdd.png" alt="" class="thumb-sm  mr-2 "> ePOS <span  style="font-size: 16px; font-weight: bolder;color: #8bc34a !important;"> V 3.0 </span>   </a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0 " id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    <div class=" form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    </div>
+    <!-- Navbar Search-->
+    <!-- Navbar-->
+    <ul class="navbar-nav ">
+
+    <li class="nav-item dropdown nav-item d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-1 my-2 my-md-0 ">
+    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ‍<div class=" d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-q my-2 my-md-0"> </div> <i class="fas fa-info-circle"></i>  <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"> Staf Activity Info </div> </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+    <a class="nav-link" href="#"> Role Activity </a>
+    <a class="nav-link" href="#"> Role Activity </a>
+
+    </div>
+    </li>
+    
+    </ul>
+    <ul class="navbar-nav ">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="../assets/img/user/65429f3a8ed92_Screenshot (63).png" onError="this.onerror=null;this.src='';"alt="" class="thumb-sm rounded-circle mr-2"> ‍<div class=" d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"> MH RONY </div> </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="account-setting"> User Profile </a>
+            <a class="dropdown-item" href="business-setting"> Business Setting </a>
+            <a class="dropdown-item" href="change-password"> Password Reset </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="controller/LogOutController.php">Logout</a>
+        </div>
+    </li>
+    </ul>
+</nav>      <div id="layoutSidenav">
+         <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+               <div class="sb-sidenav-menu">
+                  <div class="nav">
+                     <div class="sb-sidenav-menu-heading"> </div>
+                     <a class="nav-link dahboard-btn" style="padding: 9px;" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt text-light" ></i></div>
+                        Dashboard 
+                     </a>
+                     
+					 
+					 <a class="nav-link collapsed  " href="#" data-toggle="collapse" data-target="#service" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div> Purchase                        
+                        <div class="sb-sidenav-collapse-arrow"><i  style="color: black;" class="fas fa-angle-down"></i></div>
+                     </a>
+                     <div class="collapse" id="service" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">                           
+                           <a class="nav-link" href="add-purchase.html"> Add Purchase</a>
+                           <!-- <a class="nav-link" href="authers/dashboard.php"> Add Purchase</a> -->
+                           <a class="nav-link" href="#"> Purchase History</a>
+                        </nav>
+                     </div>
+                              
+					 
+					<a class="nav-link collapsed  " href="#" data-toggle="collapse" data-target="#sale" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>Sales 
+                        <div class="sb-sidenav-collapse-arrow"><i  style="color: black;" class="fas fa-angle-down"></i></div>
+                    </a>
+                     <div class="collapse" id="sale" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                           <a class="nav-link " href="new-sale.html">  New Sale </a>
+                           <a class="nav-link" href="#"> Sales History </a>
+                          
+                        </nav>
+                     </div>		 
+					 
+               <div class="sb-sidenav-footer">
+                  
+       
+				  <div class="small" > &copy Soft Land BD | V. 1.0.1 </div>
+               </div>
+            </nav>
+         </div>            <!-- Modal Add Product-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                     </div>
+                     <div class="modal-body">
+                        <form action="controller/product/AddProductController.php" method="post" enctype="multipart/form-data">
+                           <div class="row">
+                            <input type="hidden" name="author_id" value="1">
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="barcode">Barcode</label>
+                                 <input type="text" class="form-control" id="barcode"  name="barcode" autofocus required="required">
+                              </div>
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="inputEmail4">Auto Code</label>
+                                 <a class="btn btn-warning btn-block" style="height: 36px;font-size: 24px;text-align: center;display: flex;align-items: center;justify-content: center;" onclick="getElementById('barcode').value=Math.floor(Math.random() * 10) + Date.now()"><i class="fa fa-barcode"> </i></a>
+                              </div>
+
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="product_name">Product Name <samp class="text-danger"> * </samp> </label>
+                                 <input type="text" class="form-control" id="product_name" name="product_name" required="required">
+                              </div>
+
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="product_category">Category  <samp class="text-danger"> * </samp></label>
+                                 <select id="product_category" type="text" class="form-control js-select2" name="product_category" required>
+                                    <option value="" selected disabled>Choose Your Category</option>
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">ABC</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">AAAA</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">AAAAAA</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">BBBBB</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">GGGG</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">Mudi</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_ctg_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>80</b><br />
+">SSC</option>
+
+                                                                              
+                                 </select>
+                              </div>
+               
+                              
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="unit_type">Unit  <samp class="text-danger"> * </samp></label>
+                                 <select id="unit_type" type="text" class="form-control js-select2" name="unit_type"  required>
+                                   <option value="" disabled selected>Choose Your Unit Type</option>
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_unit_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>101</b><br />
+">KG</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_unit_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>101</b><br />
+">PC</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_unit_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>101</b><br />
+">Double</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_unit_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>101</b><br />
+">Test</option>
+
+                                    
+                                        <option value="<br />
+<b>Warning</b>:  Undefined array key "product_unit_id" in <b>C:\xampp\htdocs\Online-E-POS-and-Store-Management-System-in-PHP-main\supper_admin\add_purchase.php</b> on line <b>101</b><br />
+">ABC</option>
+
+                                                                              
+                                 </select>
+                              </div>
+               
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="buy_rate">Buy Rate  <samp class="text-danger"> * </samp>  </label>
+                                 <input type="number"  min="0" class="form-control" id="buy_rate"  name="buy_rate" required="required" >
+                              </div>
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="retail_price">Retail Price  <samp class="text-danger"> * </samp></label>
+                                 <input type="number"  min="0" id="retail_price" class="form-control"  name="retail_price" required="required">
+                              </div>
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="wholesale_price">Wholesale Price <samp class="text-danger"> * </samp></label>
+                                 <input type="number"  min="0" id="wholesale_price" class="form-control"  name="wholesale_price" required="required">
+                              </div>
+               
+                              <div class="form-group col-md-6 col-sm-12">
+                                 <label for="opening_stock">Opening</label>
+                                 <input type="number" min="0" class="form-control"  id="opening_stock" name="opening_stock">
+                              </div>
+                               <div class="form-group col-md-6 col-sm-12">
+                                 <label for="product_img">Product Image (Optinal)</label>
+                                 <input type="file" class="form-control"  id="product_img" name="product_img">
+                              </div>
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary " name="product_add_by_purchase">Add Product</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!--Close Modal Add Product-->
+         
+   <div id="layoutSidenav_content">
+      <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <form class="calculate" name="frmProduct" method="post" action="add_buy.php" oncChange="add_calcualte ()" id="form-id">
+                    <div class="row">
+                        <div class="col-lg-10 col-sm-12 col-md-6 mt-3">
+                            <h5 style="color: #3f5eb5;  text-align: left;"> Purchase <i class="fa fa-angle-right"></i>
+                                Purchase Invoice</h5>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-md-3 mt-2" style="background-color: #fff;">
+                            <a class="btn btn-light" href="purchase-history" role="button"
+                               style=" margin-top: 5px; margin-left:0px; text-align: center; color: black; font-weight: normal; font-size: 16px; font-family: serif;"><i
+                              class="fa fa-folder" style="color: black;"></i> Purchase History</a>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- Product Select Topbar -->
+                    <div class="row">
+                        <div class="col-md-8">               
+                        <div class="card pb-0 pb-0">
+                            <div class="card-body pb-0  ">
+                                <div class="row">
+                                    <div class="form-group col-md-2">
+                                        <input type="text" name='d_ate' readonly required class="form-control form-control-sm" value="23-05-2024" required>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <input type="number" name='invoice_no' required id="invoice_no"
+                                            class="form-control form-control-sm" placeholder="Invoice# 00-0000">
+                                        <span id="availability"></span>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                       <select id="supplier_id" type="text" class="form-control js-select2" name="supplier_id"  required>
+                                          <option>Choose Supplier</option>
+                                          
+                                                <option value="1">Md. Mehedi Hasan</option>
+
+                                            
+                                                <option value="2">Md. Mehedi Hasan</option>
+
+                                            
+                                                <option value="3">Rony</option>
+
+                                            
+                                                <option value="4">Md. Mehedi Hasan</option>
+
+                                            
+                                                <option value="5">Md. Mehedi Hasan</option>
+
+                                            
+                                                <option value="6">Md. Mehedi Hasan</option>
+
+                                                                                            
+                                       </select>
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <input type="text" name='current_blance' readonly required class="form-control form-control-sm" value="Blance - 200020 Tk" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-2 bsection" style="padding: 10px;">
+                                <div class="product-read">
+                                    <div class="outer">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="ui-widget">
+                                                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                                    <input type="text" autofocus class="searchcode add form-control" style="background: lavenderblush;" name="searchcode" id="search" placeholder="Search the Product">
+                                                    <div class="result-box col-md-12" style="position: absolute; z-index:100000" id="result"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered items-table">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <div class="all_pdelete">
+                                                <i class="fa fa-trash"></i>
+                                            </div> 
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            S/N
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            Barcode
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            Product Name
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            Expire Date
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;" >
+                                            Qty.
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            Buy Rate
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            Retl Price
+                                        </th>
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            Wh Price
+                                        </th>
+                                       
+                                        <th style=" font-weight: bold; font-size: 12px; color:#0d47a1; text-transform: uppercase;">
+                                            STotal
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="p_add_table">
+
+                                        
+                                        <tr class="productRow" > 
+                                            <td style='text-align: center'><div class="deleteBtn" data-product-id="1"><i class="fa fa-trash"></i></div></td>
+                                            <td> 1</td>
+                                            <input type='hidden' readonly  value='' name='product_id[]' class='table_input'>
+                                            <td><input type='' readonly  value='1698983502418' name='product_barcode' class='table_input'> </td>
+                                            <td><input type='text' value='Darryl Bradshaw' name='product_name[]' class='table_input'> </td>
+                                            <td><input type='date' value='2024-05-23' name='expire_date[]' class='table_input'></td>
+                                            <td><input type='number' value='1' min="1" name='qty[]'  class='table_input_number qty'></td>
+                                            <td><input type='number' min="1"   value='' name='buy[]' class='table_input_number buy'></td>
+                                            <td><input type='number' min="1"  value='' name='sale[]' class='table_input_number sale'></td>
+                                            <td><input type='number' min="1" value='' name='wh_price'  class='table_input_number sub_buy'></td>
+                                            <td><input type='number' value='' name='sub_buy[]' readonly class='table_input_number sub_buy'></td>
+                                        </tr>
+                                                                            </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>                            
+                    <!-- Product Select Topbar End -->
+                    
+                    <div class="col-md-4">
+
+                        <div class="row ">
+                                <div class="col-md-12 form-group">
+                                    <input type="hidden" name="added_by" value="">
+                                    <input class="form-control  text-center font-weight-bold sub_total" readonly=""
+                                        type="hidden" id="sub_total" name="sub_total">
+                                        <label for="total">Total</label>
+                                        <p>
+                                            <input class="form-control text-success text-right font-weight-bold h6 total" readonly="" type="text" id="total" name="total" style="background-color: #20c997;
+                                        padding: 1rem;
+                                        padding: 2rem !important;
+                                        font-size: 33px;
+                                        text-align: center;
+                                        text-align: center !important;
+                                        color: #000 !important;">
+                                        </p> 
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <div class="input-group mb-0 mr-sm-0">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">Commission</div>
+                                        </div>
+                                        <input class="form-control  text-center font-weight-bold commission" type="text"
+                                            id="commission" name="commission">
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        <label class="sr-only" for="shipping">Shipping</label>
+                                        <div class="input-group mb-0 mr-sm-0">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" style="width: 100px;">Shipping</div>
+                                            </div>
+                                            <input class="form-control text-success text-right font-weight-bold shipping" autocomplete="off" type="text" id="shipping" name="shipping">
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="col-md-6 form-group">
+                                        <label class="sr-only" for="payable">Payable</label>
+                                        <div class="input-group mb-0 mr-sm-0">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" style="width: 100px;">Payable</div>
+                                            </div>
+                                            <input class="form-control text-success text-right font-weight-bold payable" readonly="" type="text" id="payable" name="payable">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="sr-only" for="paid">Paid</label>
+                                        <div class="input-group mb-0 mr-sm-0">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text pay" style="width: 100px;">Paid</div>
+
+                                            </div>
+                                            <input class="form-control text-success text-right font-weight-bold paid" autocomplete="off" type="text" id="paid" name="paid">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="sr-only" for="due">Due</label>
+                                        <div class="input-group mb-0 mr-sm-0">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" style="width: 100px;">Due</div>
+                                            </div>
+                                            <input class="form-control text-danger text-right font-weight-bold due" readonly="" type="text" id="due" name="due">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="sr-only" for="due">Previous Due</label>
+                                        <div class="input-group mb-0 mr-sm-0">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" style="width: 100px;">Previous Due</div>
+                                            </div>
+                                            <input class="form-control text-danger text-right font-weight-bold due" readonly="" type="text" id="previous_due" name="previous_due">
+                                        </div>
+                                    </div>
+
+                                </div>
+                        </div>
+                    </div>
+                    <hr>
+                            <div class="row">
+                                <div class="col-md-6" style="float:right">
+                                    <label for="comment">Comment</label>
+                                    <textarea rows="3" class="form-control" name="comment"></textarea>
+                                </div>
+                            </div>
+
+                    <hr>
+                    <div class="card-footer">
+                        <div class="col-md-12 text-right">
+                            <input type="submit" class="btn btn-outline-success" name="save" id="save" value="Save">
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </div>
+
+                    <!--- Hidden Object-->
+                    <input type="hidden" class="form-control" name="created" value="2023-02-28 15:48:37">
+                    <input type="hidden" class="form-control" name="uniqueid" value="1699029330">
+                    <!--- Hidden Object-->
+                </form>
+        </section>
+
+      </div>
+ 
+    </div>
+</div>
+          
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/plugin/chart/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/plugin/chart/datatables-demo.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js'></script>
+        <script src="../assets/plugin/select2/dist/script.js"></script>
+        <script src="../assets/js/shortcut.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link href	= "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js'></script>
+        <!-- <script src="../assets/js/buy.js"></script> -->
+        
+        <!-- Get Product List for Search -->
+          <script>
+            $(document).ready(function(){
+                $('#search').keyup(function(){
+                    var query = $(this).val();
+                    if(query !== ''){
+                    $.ajax({
+                        url: 'ajax_get_buy.php',
+                        method: 'POST',
+                        data: {query: query},
+                        success: function(data){
+                            $('#result').html(data);
+                        }
+                    });
+                    } else {
+                    $('#result').html('');
+                    }
+                });
+            });
+        </script>
+
+        <script>
+             
+            var obj = document.createElement("audio");
+            obj.src = "../assets/sound/03.wav";
+            obj.volume = 0.3;
+            obj.autoPlay = false;
+            obj.preLoad = true;
+            obj.controls = true;
+            obj.play();
+            currentRow.hide();
+                    </script>
+
+        <script>
+            function addProductToRow(productId) {
+                $.ajax({
+                    url: 'ajax_get_product.php',
+                    type: 'get',
+                    data: 'id=' + productId,
+
+                    success: function(response) {
+                        var responseData = JSON.parse(response);
+                        console.log(responseData); 
+                        var html =
+                            '<tr id='+responseData.id+'>'+
+                            '<td style="text-align: center"><input style="position: unset; opacity: 1;" type="checkbox" name="record"></td>'+
+                            '<td style="text-align: center"><input style="position: unset; opacity: 1;" type="checkbox" name="record"></td>'+
+                            '<td><input type="text" readonly="" value="'+responseData.barcode+'" name="barcode[]" class="table_input"></td>'+
+                            '<td style="display:none;"><input type="text" readonly="" value="'+responseData.id+'" name="product_id[]" class="table_input"></td>'+
+                            '<td><input type="" readonly="" value="'+responseData.product_name+'" name="product_name[]" class="table_input"></td>'+
+                            '<td><input type="date" value="" name="expire_date[]" class="table_input"></td>'+
+                            '<td><input type="text" value="1" name="qty[]" class="table_input_number qty"></td>'+
+                            '<td><input type="text" value="'+responseData.buy_rate+'" name="buy[]" class="table_input_number buy"></td>'+
+                            '<td><input type="text" value="'+responseData.retail_Price+'" name="retail_Price[]" class="table_input_number retail_Price"></td>'+
+                            '<td><input type="text" value="'+responseData.wholesale_price+'" name="sale[]" class="table_input_number sale"></td>'+
+                            '<td><input type="text" value="'+responseData.buy_rate+'" name="sub_buy[]" readonly="" class="table_input_number sub_buy"></td>'+
+                            '</tr>';
+
+                        $('#p_add_table').append(html);
+                        $(".result-box").empty();
+                        $('#searchcode').val('').focus();
+
+                        add_calcualte();
+                    },
+                    error: function() {
+                        console.log('error');
+                    }
+
+                });
+            }
+            
+
+        
+        // fetch prev due
+        $('#supplier_id').on('change', function() {
+            const supplierId = $(this).val();
+            
+            $.ajax({
+                url: 'controller/supplier/getSupplierDeoController.php?supplier_id=' + supplierId,
+                success: function(data) {
+                    console.log(data); 
+                    $('#previous_due').val(data)
+                },
+                error: function() {
+                    
+                }
+            });
+        })
+
+
+        // SUM OF AMOUNT
+
+        function add_calcualte() {
+
+            var grandTotal = 0;
+            $("input[name='qty[]']").each(function (index) {
+                var qty = $("input[name='qty[]']").eq(index).val();
+                var buy = $("input[name='buy[]']").eq(index).val();
+                var output = parseFloat(parseFloat(qty) * parseFloat(buy)).toFixed(2);
+                if (!isNaN(output)) {
+                    $("input[name='sub_buy[]']").eq(index).val(output);
+                    grandTotal = parseFloat(parseFloat(grandTotal) + parseFloat(output)).toFixed(2);
+
+                    var commission = +$(".commission").val();
+                    var shipping = +$(".shipping").val();
+                    var paid = +$(".paid").val();
+
+                    $('#sub_total').val(grandTotal);
+                    $('#total').val(grandTotal - commission + shipping);
+                    $('#due').val(grandTotal - commission + shipping - paid);
+                }
+            })
+
+        }
+
+        // Change Caculate Value
+
+        $(".calculate").on('keyup change', function () {
+            add_calcualte()
+        })
+
+
+
+
+        // Disable Enter Button
+        $(window).ready(function () {
+            $("#form-id").on("keypress", function (event) {
+                var keyPressed = event.keyCode || event.which;
+                if (keyPressed === 13) {
+                    $("#total").focus();
+                    $("#searchcode").focus();
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+
+
+        // Shourtcut
+    
+         shortcut?.add("ctrl+s", function () { 
+            document.getElementById("save").click();
+         });
+        
+        
+    </script>
+    <!-- Single Product Delete -->
+    <script>
+        $(document).ready(function(){
+            $(".deleteBtn").click(function(){
+                var productId = $(this).closest('.deleteBtn').data('product-id');
+                var currentRow = $(this).closest('.productRow');
+                $.ajax({
+                    url: 'controller/purchase/cart_p_Delete.php',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function(response){
+                        // You can update the UI or perform additional actions here
+                        var obj = document.createElement("audio");
+                        obj.src = "../assets/sound/trash.wav";
+                        obj.volume = 0.3;
+                        obj.autoPlay = false;
+                        obj.preLoad = true;
+                        obj.controls = true;
+                        obj.play();
+                        currentRow.hide();
+                    },
+                    error: function(xhr, status, error){
+                        console.error(error); // Log any errors to the console
+                    }
+                });
+                
+            });   
+        });
+    </script>
+    <!-- All_prduct_delete -->
+    <script>
+        $(document).ready(function(){
+            $(".all_pdelete").click(function(){
+               
+                $.ajax({
+                    url: 'controller/purchase/cart_all_p_Delete.php',
+                    type: 'POST',
+                    data: { del_id: 1 },
+                    success: function(response){
+                        // You can update the UI or perform additional actions here
+                        var obj = document.createElement("audio");
+                        obj.src = "../assets/sound/trash.wav";
+                        obj.volume = 0.3;
+                        obj.autoPlay = false;
+                        obj.preLoad = true;
+                        obj.controls = true;
+                        obj.play();
+                        $(".productRow").hide();
+                    },
+                    error: function(xhr, status, error){
+                        console.error(error); // Log any errors to the console
+                    }
+                });
+                
+            });   
+        });
+    </script>
+    
+    <style>
+        .product_search_res{
+            list-style: none;
+            background: #EEEEEE;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 1px;
+            color: #000;
+            z-index: 9999;
+        }
+        .product_search_res:hover{
+            background-color: #FEF7D7;
+        }
+    </style>
+	
+</body> 
+</php>
+
